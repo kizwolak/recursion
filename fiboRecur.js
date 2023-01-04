@@ -1,4 +1,4 @@
-const returnArray = [];
+const returnArray = [0, 1, 1];
 
 function fiboRecur(n) {
   if (n === 1) {
@@ -7,8 +7,9 @@ function fiboRecur(n) {
     return 1;
   }
   const result = fiboRecur(n - 1) + fiboRecur(n - 2);
+  if (!(returnArray.includes(result)) && result > 1) returnArray.push(result);
   return result;
 }
 
-console.log(fiboRecur(6));
+console.log(fiboRecur(8));
 console.log(returnArray);
